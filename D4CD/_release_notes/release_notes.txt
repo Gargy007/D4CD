@@ -1,0 +1,5 @@
+This file contains release notes of D4CD driver since the version 1.0.
+
+
+
+13/1/2011  Release 1.0 version of D4CD

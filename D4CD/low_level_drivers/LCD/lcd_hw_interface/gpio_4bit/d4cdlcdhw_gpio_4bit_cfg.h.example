@@ -1,0 +1,114 @@
+/**************************************************************************
+* 
+* Copyright 2014 by Petr Gargulak. eGUI/D4CD Community.
+* Copyright 2011-2013 by Petr Gargulak. Freescale Semiconductor, Inc.
+*
+***************************************************************************
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU Lesser General Public License Version 3 
+* or later (the "LGPL").
+*
+* As a special exception, the copyright holders of the D4CD project give you
+* permission to link the D4CD sources with independent modules to produce an
+* executable, regardless of the license terms of these independent modules,
+* and to copy and distribute the resulting executable under terms of your 
+* choice, provided that you also meet, for each linked independent module,
+* the terms and conditions of the license of that module.
+* An independent module is a module which is not derived from or based 
+* on this library. 
+* If you modify the D4CD sources, you may extend this exception 
+* to your version of the D4CD sources, but you are not obligated 
+* to do so. If you do not wish to do so, delete this
+* exception statement from your version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*
+* You should have received a copy of the GNU General Public License
+* and the GNU Lesser General Public License along with this program.
+* If not, see <http://www.gnu.org/licenses/>.
+*
+***************************************************************************//*!
+*
+* @file      d4cdlcdhw_gpio_4bit_cfg.h.example
+*
+* @author    Petr Gargulak
+* 
+* @version   0.0.1.0
+* 
+* @date      Jan-6-2011
+* 
+* @brief     D4D driver - gpio_4bit hardware lcd driver configuration header file 
+*
+*******************************************************************************/
+
+#ifndef __D4DLCDHW_GPIO_4BIT_CFG_H
+#define __D4DLCDHW_GPIO_4BIT_CFG_H
+
+
+  /******************************************************************************
+  * includes
+  ******************************************************************************/
+  // include here what the driver need for run for example "derivative.h"
+  // #include "derivative.h"    /* include peripheral declarations and more for S08 and CV1 */ 
+  
+  /******************************************************************************
+  * Constants
+  ******************************************************************************/
+  
+  //#define D4DLCD_DISPLAY_MCU_USER_INIT;
+  
+  /*******************************************
+  * Signals definition
+  *******************************************/
+  #define D4DLCD_EN              0         // EN   
+  #define D4DLCD_EN_PORT         PTAD      // EN 
+  #define D4DLCD_EN_DDR          PTADD     // EN    
+
+  #define D4DLCD_RS              1         // RS 
+  #define D4DLCD_RS_PORT         PTAD      // RS 
+  #define D4DLCD_RS_DDR          PTADD     // RS 
+    
+  #define D4DLCD_RW              2         // RW 
+  #define D4DLCD_RW_PORT         PTAD      // RW 
+  #define D4DLCD_RW_DDR          PTADD     // RW 
+  
+  #define D4DLCD_BACKLIGHT       3         // BACKLIGHT 
+  #define D4DLCD_BACKLIGHT_PORT  PTAD      // BACKLIGHT 
+  #define D4DLCD_BACKLIGHT_DDR   PTADD     // BACKLIGHT 
+  
+  
+  // I/O port CONFIG for parallel transfer
+
+  #define D4DLCD_DATA            PTBD      // 4bit bus
+  #define D4DLCD_DATA_DDR        PTBDD     // 4bit bus DDR 
+  #define D4DLCD_DATA_PE         PTBPE     // 4bit bus PE
+  #define D4DLCD_DATA_MASK       0x0F      // 4bit mask
+  #define D4DLCD_DATA_SHIFT      0x0       // 4bit shift
+
+  /*********** Power macros - for modification uncoment and modify ***********/
+  
+  //#define D4DLCD_INIT_EN OUTPUT(D4DLCD_EN);
+  //#define D4DLCD_ASSERT_EN RESET(D4DLCD_EN);
+  //#define D4DLCD_DEASSERT_EN SET(D4DLCD_EN);
+  
+  //#define D4DLCD_INIT_RS OUTPUT(D4DLCD_RS);
+  //#define D4DLCD_ASSERT_RS RESET(D4DLCD_RS);
+  //#define D4DLCD_DEASSERT_RS SET(D4DLCD_RS);
+  
+  //#define D4DLCD_INIT_RW OUTPUT(D4DLCD_RW);
+  //#define D4DLCD_ASSERT_RW RESET(D4DLCD_RW);
+  //#define D4DLCD_DEASSERT_RW SET(D4DLCD_RW);
+  
+  //#define D4DLCD_INIT_BACKLIGHT OUTPUT(D4DLCD_BACKLIGHT);
+  //#define D4DLCD_ASSERT_BACKLIGHT RESET(D4DLCD_BACKLIGHT);
+  //#define D4DLCD_DEASSERT_BACKLIGHT SET(D4DLCD_BACKLIGHT);
+  
+  //#define D4DLCD_INIT_DATA OUTPUT_ALL(D4DLCD_DATA);
+  //#define D4DLCD_DATA_WRITE(x) D4DLCD_DATA = x;
+  //#define D4DLCD_DATA_READ(x) x = D4DLCD_DATA;
+  //#define D4DLCD_DATA_SET2READ INPUT_ALL(D4DLCD_DATA);
+  //#define D4DLCD_DATA_SET2WRITE OUTPUT_ALL(D4DLCD_DATA);
+
+#endif /* __D4DLCDHW_GPIO_4BIT_CFG_H */
