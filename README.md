@@ -24,16 +24,16 @@ application with professional appearance and logic structure for developer.
 * Smart support-screen-oriented structure of the user code
 * Custom screen sizes, position, and a header like window
 * Objects:
-** Button
-** Check Box / User handled Radio Button
-** Label
-** Menu
-** Number
-** ListBox
+ * Button
+ * Check Box / User handled Radio Button
+ * Label
+ * Menu
+ * Number
+ * ListBox
 * User defined objects:
-** Time
-** Date
-** Password
+ * Time
+ * Date
+ * Password
 * HW cursor support
 * Multiple user font tables support
 * Since February 2014 is available free under LGPL license, to allow community extend this project.
@@ -68,21 +68,22 @@ Graphic object changes
 The graphic object are changed to reflect capability of char display. The list of object is divided to two
 parts:
 * Standard:
-** button
-** label
-** check box
-** menu
-** number
-** list box
+ * button
+ * label
+ * check box
+ * menu
+ * number
+ * list box
 * User defined:
-** time
-** date
-** password
+ * time
+ * date
+ * password
 
 Low level drivers API changes
 -----------------------------
 The low level drivers API had to be changed to reflect different control and capability of char display. The
 main idea and structure of low level drivers are same as in eGUI but the interface content is changed.
+
 ![D4CD_structure](https://raw.github.com/Gargy007/D4CD/master/DOC/images/D4CD_structure.png)
 
 The LCD controller level API structure content:
@@ -110,6 +111,7 @@ For details just check the source code in “d4cd_lldapi.h“file.
 Example demo
 ============
 In repository is also included the demo that is using older Freescale EVB board M68EVB08GB60 that contains alphanumerical display.
+
 ![M68EVB08GB60](https://raw.github.com/Gargy007/D4CD/master/DOC/images/M60EVB08GB60.png)
 
 Email :
