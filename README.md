@@ -119,7 +119,7 @@ In repository is also included the demo that is using older Freescale EVB board 
 Similar projects :
 ==================
 The parent of this project is eGUI graphical driver.
-Please check also:  **[eGUI - Graphic driver] (http://gargy007.github.io/eGUI)** 
+Please check also:  **[eGUI - Graphic driver] (https://github.com/Gargy007/eGUI)** 
 
 Email :
 =======
