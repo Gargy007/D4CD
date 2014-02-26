@@ -11,6 +11,8 @@ functionality like touch screen support and add some new like cursor support tha
 with char displays.
 
 For inspiration how the things plus minus works in D4CD look at eGUI documentation **[eGUI Reference manual](http://gargy007.github.io/egui_doc/)**.
+For more info check the project **[Wiki page](https://github.com/Gargy007/D4CD/wiki)**
+
 
 Features
 ========
@@ -24,16 +26,16 @@ application with professional appearance and logic structure for developer.
 * Smart support-screen-oriented structure of the user code
 * Custom screen sizes, position, and a header like window
 * Objects:
- * Button
- * Check Box / User handled Radio Button
- * Label
- * Menu
- * Number
- * ListBox
+ * [Button](https://github.com/Gargy007/D4CD/wiki/D4CD_BUTTON)
+ * [Check Box / User handled Radio Button](https://github.com/Gargy007/D4CD/wiki/D4CD_CHECKBOX)
+ * [Label](https://github.com/Gargy007/D4CD/wiki/D4CD_LABEL)
+ * [Menu](https://github.com/Gargy007/D4CD/wiki/D4CD_MENU)
+ * [Number](https://github.com/Gargy007/D4CD/wiki/D4CD_NUMBER)
+ * [ListBox](https://github.com/Gargy007/D4CD/wiki/D4CD_LISTBOX)
 * User defined objects:
- * Time
- * Date
- * Password
+ * [Time](https://github.com/Gargy007/D4CD/wiki/D4CD_TIME)
+ * [Date](https://github.com/Gargy007/D4CD/wiki/D4CD_DATE)
+ * [Password](https://github.com/Gargy007/D4CD/wiki/D4CD_PASSWORD)
 * HW cursor support
 * Multiple user font tables support
 * Since February 2014 is available free under LGPL license, to allow community extend this project.
@@ -68,16 +70,16 @@ Graphic object changes
 The graphic object are changed to reflect capability of char display. The list of object is divided to two
 parts:
 * Standard:
- * button
- * label
- * check box
- * menu
- * number
- * list box
-* User defined:
- * time
- * date
- * password
+ * [Button](https://github.com/Gargy007/D4CD/wiki/D4CD_BUTTON)
+ * [Check Box / User handled Radio Button](https://github.com/Gargy007/D4CD/wiki/D4CD_CHECKBOX)
+ * [Label](https://github.com/Gargy007/D4CD/wiki/D4CD_LABEL)
+ * [Menu](https://github.com/Gargy007/D4CD/wiki/D4CD_MENU)
+ * [Number](https://github.com/Gargy007/D4CD/wiki/D4CD_NUMBER)
+ * [ListBox](https://github.com/Gargy007/D4CD/wiki/D4CD_LISTBOX)
+* User defined objects:
+ * [Time](https://github.com/Gargy007/D4CD/wiki/D4CD_TIME)
+ * [Date](https://github.com/Gargy007/D4CD/wiki/D4CD_DATE)
+ * [Password](https://github.com/Gargy007/D4CD/wiki/D4CD_PASSWORD)
 
 Low level drivers API changes
 -----------------------------
@@ -113,6 +115,11 @@ Example demo
 In repository is also included the demo that is using older Freescale EVB board M68EVB08GB60 that contains alphanumerical display.
 
 ![M68EVB08GB60](https://raw.github.com/Gargy007/D4CD/master/DOC/images/M60EVB08GB60.png)
+
+Similar projects :
+==================
+The parent of this project is eGUI graphical driver.
+Please check also:  **[eGUI - Graphic driver] (http://gargy007.github.io/eGUI)** 
 
 Email :
 =======
