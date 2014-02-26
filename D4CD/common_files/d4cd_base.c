@@ -343,7 +343,6 @@ void D4CD_HandleKeys(void)
 {
     // get active screen
     D4CD_SCREEN* pScreen = D4CD_GetActiveScreen();
-    D4CD_SCREEN_DATA* pData = pScreen->pData;  
     D4CD_OBJECT* pFocus;
     D4CD_KEY_SCANCODE scanCode;
     D4CD_BOOL tmp_release;

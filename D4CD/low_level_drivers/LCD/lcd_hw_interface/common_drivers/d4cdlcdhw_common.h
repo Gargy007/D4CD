@@ -73,6 +73,7 @@
   /******************************************************************************
   * Global functions
   ******************************************************************************/
+  void D4CDLCDHW_CommonInit(void);
   void D4CDLCD_Delay_ms_Common(unsigned short period);
   void Cpu_Delay20US(Word us20);
 

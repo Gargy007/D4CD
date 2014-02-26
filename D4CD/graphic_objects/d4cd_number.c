@@ -49,7 +49,7 @@
 //Internal API
 void D4CD_NumberOnMessage(D4CD_MESSAGE* pMsg);
 static void D4CD_NumberOnKeyUp(D4CD_MESSAGE* pMsg);
-static void D4CD_NumberTimeTick(D4CD_MESSAGE* pMsg);
+
 
 
 const D4CD_OBJECT_SYS_FUNCTION d4cd_numberSysFunc = 

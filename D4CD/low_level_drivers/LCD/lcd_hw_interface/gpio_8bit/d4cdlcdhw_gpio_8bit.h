@@ -64,21 +64,21 @@
     /******************************************************************************
     * Macros 
     ******************************************************************************/
-    #define SET(x)           (x##_PORT) |= (1 << (x))
-    #define RESET(x)         (x##_PORT) &= ~(1 << (x))
-    #define SET_ALL(x)       (x##_PORT) = 0xFF
-    #define RESET_ALL(x)     (x##_PORT) = 0 
+    #define GPIO_8BIT_SET(x)           (x##_PORT) |= (1 << (x))
+    #define GPIO_8BIT_RESET(x)         (x##_PORT) &= ~(1 << (x))
+    #define GPIO_8BIT_SET_ALL(x)       (x##_PORT) |= 0xFF
+    #define GPIO_8BIT_RESET_ALL(x)     (x##_PORT) &= ~0xFF 
 
-    #define OUTPUT(x)        (x##_DDR) |= (1 << (x)) 
-    #define INPUT(x)         (x##_DDR) &= ~(1 << (x))
-    #define OUTPUT_ALL(x)    (x##_DDR) = 0xFF 
-    #define INPUT_ALL(x)     (x##_DDR) = 0
+    #define GPIO_8BIT_OUTPUT(x)        (x##_DDR) |= (1 << (x)) 
+    #define GPIO_8BIT_INPUT(x)         (x##_DDR) &= ~(1 << (x))
+    #define GPIO_8BIT_OUTPUT_ALL(x)    (x##_DDR) |= 0xFF 
+    #define GPIO_8BIT_INPUT_ALL(x)     (x##_DDR) &= ~0xFF
 
     #ifndef D4CDLCD_INIT_EN
       #ifndef D4CDLCD_EN
       	#error "The Macro D4CDLCD_EN must be set in LCD low level driver configuration file." 
       #else
-      	#define D4CDLCD_INIT_EN OUTPUT(D4CDLCD_EN);
+      	#define D4CDLCD_INIT_EN GPIO_8BIT_OUTPUT(D4CDLCD_EN);
       #endif	
     #endif
     
@@ -86,7 +86,7 @@
     	#ifndef D4CDLCD_EN
       	#error "The Macro D4CDLCD_EN must be set in LCD low level driver configuration file." 
       #else
-      	#define D4CDLCD_ASSERT_EN RESET(D4CDLCD_EN);
+      	#define D4CDLCD_ASSERT_EN GPIO_8BIT_RESET(D4CDLCD_EN);
       #endif	
     #endif  
     
@@ -94,7 +94,7 @@
       #ifndef D4CDLCD_EN
       	#error "The Macro D4CDLCD_EN must be set in LCD low level driver configuration file." 
       #else
-      	#define D4CDLCD_DEASSERT_EN SET(D4CDLCD_EN);
+      	#define D4CDLCD_DEASSERT_EN GPIO_8BIT_SET(D4CDLCD_EN);
       #endif	
     #endif
     
@@ -102,7 +102,7 @@
       #ifndef D4CDLCD_RS
       	#error "The Macro D4CDLCD_RS must be set in LCD low level driver configuration file." 
       #else
-      	#define D4CDLCD_INIT_RS OUTPUT(D4CDLCD_RS);
+      	#define D4CDLCD_INIT_RS GPIO_8BIT_OUTPUT(D4CDLCD_RS);
       #endif	
     #endif
     
@@ -110,7 +110,7 @@
     	#ifndef D4CDLCD_RS
       	#error "The Macro D4CDLCD_RS must be set in LCD low level driver configuration file." 
       #else
-      	#define D4CDLCD_ASSERT_RS RESET(D4CDLCD_RS);
+      	#define D4CDLCD_ASSERT_RS GPIO_8BIT_RESET(D4CDLCD_RS);
       #endif	
     #endif  
     
@@ -118,7 +118,7 @@
       #ifndef D4CDLCD_RS
       	#error "The Macro D4CDLCD_RS must be set in LCD low level driver configuration file." 
       #else
-      	#define D4CDLCD_DEASSERT_RS SET(D4CDLCD_RS);
+      	#define D4CDLCD_DEASSERT_RS GPIO_8BIT_SET(D4CDLCD_RS);
       #endif	
     #endif
 
@@ -126,7 +126,7 @@
       #ifndef D4CDLCD_RW
       	#error "The Macro D4CDLCD_RW must be set in LCD low level driver configuration file." 
       #else
-      	#define D4CDLCD_INIT_RW OUTPUT(D4CDLCD_RW);
+      	#define D4CDLCD_INIT_RW GPIO_8BIT_OUTPUT(D4CDLCD_RW);
       #endif	
     #endif
     
@@ -134,7 +134,7 @@
     	#ifndef D4CDLCD_RW
       	#error "The Macro D4CDLCD_RW must be set in LCD low level driver configuration file." 
       #else
-      	#define D4CDLCD_ASSERT_RW RESET(D4CDLCD_RW);
+      	#define D4CDLCD_ASSERT_RW GPIO_8BIT_RESET(D4CDLCD_RW);
       #endif	
     #endif  
     
@@ -142,22 +142,22 @@
       #ifndef D4CDLCD_RW
       	#error "The Macro D4CDLCD_RW must be set in LCD low level driver configuration file." 
       #else
-      	#define D4CDLCD_DEASSERT_RW SET(D4CDLCD_RW);
+      	#define D4CDLCD_DEASSERT_RW GPIO_8BIT_SET(D4CDLCD_RW);
       #endif	
     #endif
     
     #ifdef D4CDLCD_BACKLIGHT
 
       #ifndef D4CDLCD_INIT_BACKLIGHT
-      	#define D4CDLCD_INIT_BACKLIGHT OUTPUT(D4CDLCD_BACKLIGHT);
+      	#define D4CDLCD_INIT_BACKLIGHT GPIO_8BIT_OUTPUT(D4CDLCD_BACKLIGHT);
       #endif
       
       #ifndef D4CDLCD_ASSERT_BACKLIGHT
-      	#define D4CDLCD_ASSERT_BACKLIGHT RESET(D4CDLCD_BACKLIGHT);
+      	#define D4CDLCD_ASSERT_BACKLIGHT GPIO_8BIT_RESET(D4CDLCD_BACKLIGHT);
       #endif  
       
       #ifndef D4CDLCD_DEASSERT_BACKLIGHT
-        #define D4CDLCD_DEASSERT_BACKLIGHT SET(D4CDLCD_BACKLIGHT);      
+        #define D4CDLCD_DEASSERT_BACKLIGHT GPIO_8BIT_SET(D4CDLCD_BACKLIGHT);      
       #endif
       
     #endif
@@ -166,7 +166,7 @@
     #ifndef D4CDLCD_DATA
     	#error "The Macro D4CDLCD_DATA must be set in LCD low level driver configuration file." 
     #else    
-    	#define D4CDLCD_INIT_DATA OUTPUT_ALL(D4CDLCD_DATA);
+    	#define D4CDLCD_INIT_DATA GPIO_8BIT_OUTPUT_ALL(D4CDLCD_DATA);
     #endif	
   #endif
   
@@ -190,7 +190,7 @@
     #ifndef D4CDLCD_DATA
     	#error "The Macro D4CDLCD_DATA must be set in LCD low level driver configuration file." 
     #else    
-    	#define D4CDLCD_DATA_SET2READ INPUT_ALL(D4CDLCD_DATA);
+    	#define D4CDLCD_DATA_SET2READ GPIO_8BIT_INPUT_ALL(D4CDLCD_DATA);
     #endif	
   #endif
   
@@ -198,7 +198,7 @@
     #ifndef D4CDLCD_DATA
     	#error "The Macro D4CDLCD_DATA must be set in LCD low level driver configuration file." 
     #else    
-    	#define D4CDLCD_DATA_SET2WRITE OUTPUT_ALL(D4CDLCD_DATA);
+    	#define D4CDLCD_DATA_SET2WRITE GPIO_8BIT_OUTPUT_ALL(D4CDLCD_DATA);
     #endif	
   #endif
   

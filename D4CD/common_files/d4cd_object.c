@@ -96,6 +96,17 @@ void D4CD_ShowObject(D4CD_OBJECT_PTR pObject, Byte bShow)
 
 /**************************************************************//*!
 *
+* Return the state of object visibility 
+*
+******************************************************************/
+
+D4CD_BOOL D4CD_IsShowedObject(D4CD_OBJECT_PTR pObject)
+{
+  return pObject->flags->bits.bVisible;
+}
+
+/**************************************************************//*!
+*
 * Get the user pointer / data of of object
 *
 ******************************************************************/

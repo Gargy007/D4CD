@@ -50,9 +50,9 @@
 #include "d4cd_private.h"
   
 #include "d4cdlcdhw_common.h"
-
+#if (D4CD_MCU_TYPE != D4CD_KINETIS)
 #include "derivative.h"
-
+#endif
   /******************************************************************************
   * Macros 
   ******************************************************************************/
@@ -61,7 +61,7 @@
   /******************************************************************************
   * Functions definitions
   ******************************************************************************/
-  
+  static void Cpu_Delay100US(unsigned short us100);
   /**************************************************************//*!
   *
   * Public variables
@@ -187,6 +187,15 @@
     /*lint +esym( 961, 55)   */
   }
   
+  #elif (D4CD_MCU_TYPE == D4CD_KINETIS)
+  void Cpu_Delay20US(Word us20)
+  {
+    // Core clock ussually 2x faster then bus clock
+    unsigned long i = MCU_BUS_CYCLES_20US * us20;
+    while(i--){};
+      
+  }
+
   #else
     #error "Unsupported MCU type for delay 20us loop in low level common driver!"
   #endif  
@@ -318,7 +327,17 @@
       rts                                /* return from subroutine */
     }
   }
+#elif (D4CD_MCU_TYPE == D4CD_KINETIS)
+  static void Cpu_Delay100US(unsigned short us100)
+  {
+    // Core clock ussually 2x faster then bus clock
+    unsigned long i = MCU_BUS_CYCLES_100US * us100;
 
+    while(i--){};
+      
+  }
+  
+#define  __RESET_WATCHDOG()
  #else
   #error "Unsupported MCU type for delay loop in loe level common driver!"
  

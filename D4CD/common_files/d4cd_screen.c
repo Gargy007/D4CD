@@ -50,6 +50,8 @@
 
 static void D4CD_DrawScreenNC(D4CD_SCREEN* pScreen, D4CD_BOOL active);
 static void D4CD_ChangeScreen(D4CD_SCREEN* pNewScreen, D4CD_SCREEN* pOldScreen);
+static Byte D4CD_GetObjectCount(D4CD_SCREEN* pScreen);
+static Byte D4CD_FindObject(D4CD_SCREEN* pScreen, D4CD_OBJECT_PTR pObject);
 /**************************************************************//*!
 *
 * Get active screen
@@ -289,7 +291,7 @@ void D4CD_InvalidateScreen(D4CD_SCREEN* pScreen, Byte bComplete)
 *
 ******************************************************************/
 
-Byte D4CD_GetObjectCount(D4CD_SCREEN* pScreen)
+static Byte D4CD_GetObjectCount(D4CD_SCREEN* pScreen)
 {
     Byte ix = 0;
     
@@ -482,7 +484,7 @@ void D4CD_FocusPrevObject(D4CD_SCREEN* pScreen)
 *
 ******************************************************************/
 
-Byte D4CD_FindObject(D4CD_SCREEN* pScreen, D4CD_OBJECT_PTR pObject)
+static Byte D4CD_FindObject(D4CD_SCREEN* pScreen, D4CD_OBJECT_PTR pObject)
 {
     Byte ix;
     

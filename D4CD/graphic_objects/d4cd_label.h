@@ -142,4 +142,4 @@ D4CD_STRING* D4CD_LabelGetTextBuffer(D4CD_OBJECT* pThis);
 
 
 
-#endif __D4CD_LABEL_H
+#endif //__D4CD_LABEL_H

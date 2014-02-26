@@ -192,7 +192,7 @@ D4CD_MENU_INDEX D4CD_MenuFindUserDataItem(D4CD_OBJECT_PTR pThis, void* pUser);
 void* D4CD_MenuGetItemUserData(D4CD_OBJECT_PTR pThis);
 D4CD_CHAR* D4CD_MenuGetItemText(D4CD_OBJECT_PTR pThis);
 
-#endif __D4CD_MENU_H 
+#endif //__D4CD_MENU_H 
  
 
 

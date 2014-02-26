@@ -147,6 +147,6 @@ typedef struct{
 void D4CD_LCD_PrintStr(D4CD_COOR x, D4CD_COOR y, D4CD_CHAR* pText);
 void D4CD_LoadUserCharTable(D4CD_CHAR_DATA** pCharTable);
 
-#endif  __D4CD_FONT_H
+#endif  //__D4CD_FONT_H
 
 

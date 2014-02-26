@@ -48,7 +48,6 @@
 
 //Internal API
 void D4CD_TimeOnMessage(D4CD_MESSAGE* pMsg);
-static void D4CD_TimeTimeTick(D4CD_MESSAGE* pMsg);
 static Byte D4CD_TimeGetCurrSetVal(D4CD_TIME_DATA* pData);
 
 const D4CD_OBJECT_SYS_FUNCTION d4cd_timeSysFunc = 
@@ -117,7 +116,6 @@ static void D4CD_TimeValue2Coor(D4CD_OBJECT* pThis)
 
 static void D4CD_TimeOnDraw(D4CD_MESSAGE* pMsg)
 {
-    D4CD_TIME* pTime = D4CD_GET_TIME(pMsg->pObject);
     D4CD_TIME_DATA* pData = D4CD_GET_TIME_DATA(pMsg->pObject);    
     D4CD_OBJECT_DRAWFLAGS draw = pMsg->prm.draw;
     D4CD_CHAR tmp_str[9];

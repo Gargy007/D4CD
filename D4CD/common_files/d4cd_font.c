@@ -57,10 +57,10 @@ void D4CD_LCD_PrintStr(D4CD_COOR x, D4CD_COOR y, D4CD_CHAR* pText)
 {
   Byte i = 0;
   
-  (void)D4CD_LLD_LCD.D4CDLCD_GoTo(x, y);
+  
   
   while(pText[i] != 0) {
-    
+    (void)D4CD_LLD_LCD.D4CDLCD_GoTo(x++, y);
     (void)D4CD_LLD_LCD.D4CDLCD_Send_Char(pText[i]);
     i++;
   }				

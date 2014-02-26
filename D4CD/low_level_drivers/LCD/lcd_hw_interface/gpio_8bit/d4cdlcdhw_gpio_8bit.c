@@ -173,6 +173,9 @@
   {       
     D4CDLCD_DATA_WRITE(data);
     D4CDLCD_DEASSERT_EN; // enable
+    asm("NOP");
+    asm("NOP");
+    asm("NOP");
     D4CDLCD_ASSERT_EN; // enable        
     Cpu_Delay20US(2);        //wait 40us
     return 1;    
@@ -209,7 +212,7 @@
   //-----------------------------------------------------------------------------
   static unsigned char D4CDLCDHW_SendNibbleCmd_Gpio_8bit(unsigned char cmd)
   {    
-    return D4CDLCDHW_SendCmd_Gpio_8bit(cmd << 4);         
+    return D4CDLCDHW_SendCmd_Gpio_8bit((Byte)(cmd << 4));         
   }
   
   //-----------------------------------------------------------------------------

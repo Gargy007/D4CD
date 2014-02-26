@@ -1,6 +1,8 @@
 # Object files
 *.o
 *.ko
+*.stg
+*.tdt
 
 # Libraries
 *.lib
@@ -16,9 +18,11 @@
 *.exe
 *.out
 *.app
+*.abs
+*.s19
 
 # Projects nonsense files
 *.dep
+*.map
 
 # Folders
-

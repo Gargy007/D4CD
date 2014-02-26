@@ -126,6 +126,7 @@ void D4CD_FocusSet(D4CD_SCREEN* pScreen, D4CD_OBJECT_PTR pObject);
 void D4CD_FocusNextObject(D4CD_SCREEN* pScreen, Byte bInitialSearch);
 void D4CD_FocusPrevObject(D4CD_SCREEN* pScreen);
 void D4CD_InvalidateObject(D4CD_OBJECT_PTR pObject, Byte bComplete);
+D4CD_BOOL D4CD_IsShowedObject(D4CD_OBJECT_PTR pObject);
 void* D4CD_GetUserPointer(D4CD_OBJECT *pThis);
 void D4CD_CaptureKeys(D4CD_OBJECT_PTR pObj);
 D4CD_OBJECT* D4CD_GetCapturedObject(void);

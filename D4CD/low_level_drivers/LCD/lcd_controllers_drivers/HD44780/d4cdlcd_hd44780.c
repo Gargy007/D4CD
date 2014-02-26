@@ -207,6 +207,13 @@
     //----------------------------------------------------------------------------- 
   static unsigned char D4CDLCD_GoTo_HD44780(unsigned char x, unsigned char y)
   {
+  #if D4CD_DISPLAY_LINE_CNT == 1
+    if(x >= (D4CD_SCREEN_CHAR_CNT / 2))
+    {
+      x -= (D4CD_SCREEN_CHAR_CNT / 2);
+      y = 1;
+    }
+  #endif
     return D4CD_LLD_LCD_HW.D4CDLCDHW_SendCmd((unsigned  char)(D4CDLCD_DDRAM +((y % 2)?0x40:0x00)+((y / 2)?0x14:0x00) + x)); // print at ...  
   }
 

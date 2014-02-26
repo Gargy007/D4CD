@@ -72,8 +72,8 @@
     ******************************************************************************/
     #define SET(x)           (x##_PORT) |= (1 << (x))
     #define RESET(x)         (x##_PORT) &= ~(1 << (x))
-    #define SET_ALL(x)       (x##_PORT) = 0xFF
-    #define RESET_ALL(x)     (x##_PORT) = 0 
+    #define SET_ALL(x)       (x##_PORT) |= 0xFF
+    #define RESET_ALL(x)     (x##_PORT) &= ~0xFF 
 
     #define SET_MASK(x,m)       (x##_PORT) |= m
     #define RESET_MASK(x,m)     (x##_PORT) &= ~m 
@@ -81,8 +81,8 @@
 
     #define OUTPUT(x)        (x##_DDR) |= (1 << (x)) 
     #define INPUT(x)         (x##_DDR) &= ~(1 << (x))
-    #define OUTPUT_ALL(x)    (x##_DDR) = 0xFF 
-    #define INPUT_ALL(x)     (x##_DDR) = 0
+    #define OUTPUT_ALL(x)    (x##_DDR) |= 0xFF 
+    #define INPUT_ALL(x)     (x##_DDR) &= ~0xFF
 
     #define OUTPUT_MASK(x,m)    (x##_DDR) |= m 
     #define INPUT_MASK(x,m)     (x##_DDR) &= ~m

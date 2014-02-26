@@ -113,7 +113,6 @@ static void D4CD_BtnValue2Coor(D4CD_OBJECT* pThis)
 static void D4CD_BtnOnDraw(D4CD_MESSAGE* pMsg)
 {
     D4CD_BUTTON* pBtn = D4CD_GET_BUTTON(pMsg->pObject);
-    D4CD_BUTTON_STATUS* pStatus = D4CD_GET_BUTTON_STATUS(pMsg->pObject);    
     D4CD_OBJECT_DRAWFLAGS draw = pMsg->prm.draw;
 
 #if (D4CD_BTN_SEL_CHAR_LEFT == D4CD_TRUE) || (D4CD_BTN_SEL_CHAR_RIGHT == D4CD_TRUE)    

@@ -51,7 +51,7 @@ void D4CD_ListBoxOnMessage(D4CD_MESSAGE* pMsg);
 D4CD_LIST_BOX_INDEX D4CD_ListBoxGetItemCount(D4CD_OBJECT_PTR pThis);
 D4CD_COOR D4CD_ListBoxGetMaxItemLen(D4CD_OBJECT_PTR pThis);
 static void D4CD_ListBoxOnKeyUp(D4CD_MESSAGE* pMsg);
-static void D4CD_ListBoxTimeTick(D4CD_MESSAGE* pMsg);
+
 
 
 const D4CD_OBJECT_SYS_FUNCTION d4cd_listBoxSysFunc = 

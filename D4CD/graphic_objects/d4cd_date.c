@@ -48,7 +48,6 @@
 
 //Internal API
 void D4CD_DateOnMessage(D4CD_MESSAGE* pMsg);
-static void D4CD_DateDateTick(D4CD_MESSAGE* pMsg);
 static Byte D4CD_DateGetCurrSetVal(D4CD_DATE_DATA* pData);
 
 const D4CD_OBJECT_SYS_FUNCTION d4cd_dateSysFunc = 
@@ -169,7 +168,6 @@ static void D4CD_DateOnDraw(D4CD_MESSAGE* pMsg)
     D4CD_DATE_DATA* pData = D4CD_GET_DATE_DATA(pMsg->pObject);    
     D4CD_OBJECT_DRAWFLAGS draw = pMsg->prm.draw;
     D4CD_CHAR tmp_str[9];
-    Byte tmp_len = 0;
     Byte tmp_currSetVal = D4CD_DateGetCurrSetVal(pData);
     Word tmp_dateVal;
     Byte i;

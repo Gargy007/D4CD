@@ -68,6 +68,7 @@
 #define  D4CD_MCF52     51
 #define  D4CD_MCF53     52
 #define  D4CD_MCF54     53
+#define  D4CD_KINETIS   100
 
 #ifndef NULL
   #define NULL (void*)0
@@ -112,7 +113,7 @@
 #elif (D4CD_MCU_TYPE == D4CD_HC12) || (D4CD_MCU_TYPE == D4CD_HCS12) || (D4CD_MCU_TYPE == D4CD_HCS12X)
   typedef Word D4CD_BIT_FIELD;
   typedef Word D4CD_BOOL;  
-#elif (D4CD_MCU_TYPE == D4CD_MCF51) || (D4CD_MCU_TYPE == D4CD_MCF52)
+#elif (D4CD_MCU_TYPE == D4CD_MCF51) || (D4CD_MCU_TYPE == D4CD_MCF52) || (D4CD_MCU_TYPE == D4CD_KINETIS)
   typedef LWord D4CD_BIT_FIELD;
   typedef LWord D4CD_BOOL;
 #else
