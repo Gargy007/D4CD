@@ -122,34 +122,9 @@ void D4CD_NumberPrintNum(D4CD_OBJECT* pThis, D4CD_CHAR* pBuff)
 {
   D4CD_NUMBER* pNumber = D4CD_GET_NUMBER(pThis);    
   D4CD_NUMBER_DATA* pData = pNumber->pData;   
-  sWord divider;
-  Byte i;
   
-  divider = 1;
-  for(i=0; i<pNumber->pData->limits.decimalPoint; i++)
-  {
-    divider *= 10;
-  }
   
-  if(pData->value / divider)
-    i = D4CD_SprintDecS16( (sWord)(pData->value / divider), pBuff, 0);
-  else 
-  {
-    i = 0;
-    
-    if(pData->value < 0)
-      pBuff[i++] = '-';
-    
-    pBuff[i++] = '0';
-  }
-  
-  if(divider != 1)
-  {
-    pBuff[i++] = D4CD_NUMBER_DEC_POINT_CHAR;    
-    i += D4CD_SprintDecU16( D4CD_Abs16((sWord)(pData->value % divider)), &pBuff[i], 0);
-  }
-  
-  pBuff[i] = 0;
+  D4CD_PrintNum(pData->value, pNumber->pData->limits.decimalPoint, pBuff, D4CD_NUMBER_DEC_POINT_CHAR);  
 }
 
 /*******************************************************

@@ -72,7 +72,7 @@ void D4CD_InvalidateObject(D4CD_OBJECT_PTR pObject, Byte bComplete)
 *
 ******************************************************************/
 
-void D4CD_ShowObject(D4CD_OBJECT_PTR pObject, Byte bShow)
+void D4CD_ShowObject(D4CD_OBJECT_PTR pObject, D4CD_BOOL bShow)
 {
     if(bShow)
     {

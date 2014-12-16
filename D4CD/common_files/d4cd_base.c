@@ -572,6 +572,43 @@ Byte D4CD_SprintDecU8(Byte val, char *pText, char fill)
 
 /**************************************************************//*!
 *
+* print signed decimal number to string
+*
+******************************************************************/
+void D4CD_PrintNum(sWord value, Byte decimalPoint, D4CD_CHAR* pBuff, D4CD_CHAR decPointChar)
+{
+  sWord divider;
+  Byte i;
+  
+  divider = 1;
+  for(i=0; i<decimalPoint; i++)
+  {
+    divider *= 10;
+  }
+  
+  if(value / divider)
+    i = D4CD_SprintDecS16( (sWord)(value / divider), pBuff, 0);
+  else 
+  {
+    i = 0;
+    
+    if(value < 0)
+      pBuff[i++] = '-';
+    
+    pBuff[i++] = '0';
+  }
+  
+  if(divider != 1)
+  {
+    pBuff[i++] = decPointChar;    
+    i += D4CD_SprintDecU16( D4CD_Abs16((sWord)(value % divider)), &pBuff[i], 0);
+  }
+  
+  pBuff[i] = 0;
+}
+
+/**************************************************************//*!
+*
 * convert signed decimal number to string
 *
 ******************************************************************/

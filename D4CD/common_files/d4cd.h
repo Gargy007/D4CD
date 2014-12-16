@@ -120,7 +120,7 @@ D4CD_BOOL D4CD_GetBlink(void);
 /* object API */
 void D4CD_EnableTabStop(D4CD_OBJECT_PTR pObj, Byte bEnable);
 void D4CD_EnableObject(D4CD_OBJECT_PTR pObj, Byte bEnable);
-void D4CD_ShowObject(D4CD_OBJECT_PTR pObject, Byte bShow);    
+void D4CD_ShowObject(D4CD_OBJECT_PTR pObject, D4CD_BOOL bShow);    
 D4CD_OBJECT_PTR D4CD_GetFocusedObject(D4CD_SCREEN* pScreen);
 void D4CD_FocusSet(D4CD_SCREEN* pScreen, D4CD_OBJECT_PTR pObject);
 void D4CD_FocusNextObject(D4CD_SCREEN* pScreen, Byte bInitialSearch);
@@ -181,6 +181,7 @@ Byte D4CD_SprintDecU16(Word val, char *pText, char fill);
 Byte D4CD_SprintDecS16(sWord val, char *pText, char fill);
 Byte D4CD_SprintDecU32(LWord val, char *pText, char fill);
 Byte D4CD_SprintDecS32(sLWord val, char *pText, char fill);
+void D4CD_PrintNum(sWord value, Byte decimalPoint, D4CD_CHAR* pBuff, D4CD_CHAR decPointChar);
 void D4CD_ChangeText(D4CD_STRING* pBuff, char* pNewText, char fillChar);
 D4CD_BOOL D4CD_IsNum(D4CD_CHAR ch);
 D4CD_BOOL D4CD_IsChar(D4CD_CHAR ch);
